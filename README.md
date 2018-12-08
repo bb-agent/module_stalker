@@ -1,7 +1,7 @@
 module_stalker
 ============
 
-FruityWifi Stalker module
+BlackBulb Stalker module
 
 
 <b>Stalker</b> allows you to find if a device is present (macaddress) by a sound alert or log file.

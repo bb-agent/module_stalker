@@ -45,14 +45,14 @@ if ($service != "") {
 		// COPY LOG
         if ( 0 < filesize( $mod_logs ) ) {
             $exec = "$bin_cp $mod_logs $mod_logs_history/".gmdate("Ymd-H-i-s").".log";
-            exec_fruitywifi($exec);
+            exec_blackbulb($exec);
             
             $exec = "$bin_echo '' > $mod_logs";
-            exec_fruitywifi($exec);
+            exec_blackbulb($exec);
         }
 	
         $exec = "$bin_python stalker.py -i $mod_iface -m $ss_macaddress -t $ss_time -l $mod_logs > /dev/null &";
-        exec_fruitywifi($exec);
+        exec_blackbulb($exec);
         
         $wait = 1;
 	    
@@ -62,15 +62,15 @@ if ($service != "") {
 		exec($exec,$output);
 		
 		$exec = "kill " . $output[0];
-		exec_fruitywifi($exec);
+		exec_blackbulb($exec);
 		
 		// COPY LOG
         if ( 0 < filesize( $mod_logs ) ) {
             $exec = "$bin_cp $mod_logs $mod_logs_history/".gmdate("Ymd-H-i-s").".log";
-            exec_fruitywifi($exec);
+            exec_blackbulb($exec);
             
             $exec = "$bin_echo '' > $mod_logs";
-            exec_fruitywifi($exec);
+            exec_blackbulb($exec);
         }
     
     }
@@ -79,10 +79,10 @@ if ($service != "") {
 if ($install == "install_$mod_name") {
 
     $exec = "$bin_chmod 755 install.sh";
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 
     $exec = "$bin_sudo ./install.sh > $log_path/install.txt &";
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 
     header('Location: ../../install.php?module='.$mod_name);
     exit;

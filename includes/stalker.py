@@ -32,7 +32,7 @@ import pyaudio
 gVersion = "1.0"
 
 def usage():
-    print "\nFruityWifi Stalker " + gVersion + " by @xtr4nge"
+    print "\nBlackBulb Stalker " + gVersion + " by @xtr4nge"
     
     print "Usage: ./stalker.py -i INTERFACE -m MAC <options>\n"
     print "Options:"
@@ -42,7 +42,7 @@ def usage():
     print "-l LOG                    Log path (default ./stalker.log)"
     print "-h                        This help"
     print ""
-    print "FruityWifi: http://www.fruitywifi.com"
+    print "BlackBulb: http://www.blackbulb.com"
     print ""
 
 def parseOptions(argv):
@@ -81,7 +81,7 @@ def parseOptions(argv):
 
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
 logFormatter = logging.Formatter("%(asctime)s %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
-logger = logging.getLogger('fruitywifi-stalker')
+logger = logging.getLogger('blackbulb-stalker')
 fileHandler = logging.FileHandler(valueLOG)
 fileHandler.setFormatter(logFormatter)
 logger.addHandler(fileHandler)
